@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="keyboardInteractor" type="com.example.karyc.calculator.MainActivity.KeyboardInteractor"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:hint="@string/main_activity_hint"
+            app:layout_constraintBottom_toTopOf="@+id/buttonDiv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textExpression"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/textResult"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.92" />
+
+        <Button
+            android:id="@+id/button1"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/button4"
+            android:layout_below="@+id/textResult"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toStartOf="@+id/button4"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "1")}'
+            android:text="@string/button_1"
+            app:layout_constraintBottom_toTopOf="@+id/button10"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button1"
+            android:layout_marginBottom="8dp"
+            android:layout_toStartOf="@+id/button3"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "2")}'
+            android:text="@string/button_2"
+            app:layout_constraintBottom_toTopOf="@+id/button0"
+            app:layout_constraintEnd_toStartOf="@+id/button3"
+            app:layout_constraintStart_toEndOf="@+id/button1" />
+
+        <Button
+            android:id="@+id/button3"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "3")}'
+            android:text="@string/button_3"
+            app:layout_constraintBottom_toTopOf="@+id/buttonEq"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSum"
+            app:layout_constraintStart_toEndOf="@+id/button2" />
+
+        <Button
+            android:id="@+id/button4"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button1"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "4")}'
+            android:text="@string/button_4"
+            app:layout_constraintBottom_toTopOf="@+id/button1"
+            app:layout_constraintEnd_toStartOf="@+id/button5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button5"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/button4"
+            android:layout_alignStart="@+id/button2"
+            android:layout_marginBottom="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "5")}'
+            android:text="@string/button_5"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/button6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button4" />
+
+        <Button
+            android:id="@+id/button7"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button4"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toStartOf="@+id/button2"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "7")}'
+            android:text="@string/button_7"
+            app:layout_constraintBottom_toTopOf="@+id/button4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button6"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button3"
+            android:layout_below="@+id/button3"
+            android:layout_marginBottom="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "6")}'
+            android:text="@string/button_6"
+            app:layout_constraintBottom_toTopOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/buttonMul"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button5" />
+
+        <Button
+            android:id="@+id/button8"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button5"
+            android:layout_below="@+id/button5"
+            android:layout_marginBottom="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "8")}'
+            android:text="@string/button_8"
+            app:layout_constraintBottom_toTopOf="@+id/button5"
+            app:layout_constraintEnd_toStartOf="@+id/button9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button7" />
+
+        <Button
+            android:id="@+id/button9"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button6"
+            android:layout_below="@+id/button6"
+            android:layout_marginBottom="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "9")}'
+            android:text="@string/button_9"
+            app:layout_constraintBottom_toTopOf="@+id/button6"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSub"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button8" />
+
+        <Button
+            android:id="@+id/buttonSum"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textResult"
+            android:layout_alignTop="@+id/button3"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "+")}'
+            android:text="@string/button_sum"
+            app:layout_constraintBottom_toTopOf="@+id/buttonEq"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button3" />
+
+        <Button
+            android:id="@+id/buttonMul"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/buttonSub"
+            android:layout_below="@+id/buttonSub"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "*")}'
+            android:text="@string/button_mul"
+            app:layout_constraintBottom_toTopOf="@+id/buttonSum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button6" />
+
+        <Button
+            android:id="@+id/buttonDiv"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/buttonMul"
+            android:layout_alignStart="@+id/buttonMul"
+            android:layout_below="@+id/buttonMul"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "/")}'
+            android:text="@string/button_div"
+            app:layout_constraintBottom_toTopOf="@+id/button8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonParanthesesClose" />
+
+        <Button
+            android:id="@+id/buttonC"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button9"
+            android:layout_below="@+id/button9"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickCancel(view)}'
+            android:text="@string/button_C"
+            app:layout_constraintBottom_toTopOf="@+id/button7"
+            app:layout_constraintEnd_toStartOf="@+id/buttonParanthesesOpen"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/buttonParanthesesOpen"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button9"
+            android:layout_below="@+id/button9"
+            android:layout_marginBottom="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "(")}'
+            android:text="@string/parentheses_open"
+            app:layout_constraintBottom_toTopOf="@+id/button8"
+            app:layout_constraintEnd_toStartOf="@+id/buttonParanthesesClose"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonC" />
+
+        <Button
+            android:id="@+id/buttonParanthesesClose"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button9"
+            android:layout_below="@+id/button9"
+            android:layout_marginBottom="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, ")")}'
+            android:text="@string/parentheses_close"
+            app:layout_constraintBottom_toTopOf="@+id/button8"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDiv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/buttonParanthesesOpen" />
+
+        <Button
+            android:id="@+id/buttonSub"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/buttonSum"
+            android:layout_alignStart="@+id/buttonSum"
+            android:layout_below="@+id/buttonSum"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "-")}'
+            android:text="@string/button_sub"
+            app:layout_constraintBottom_toTopOf="@+id/buttonMul"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button9" />
+
+        <Button
+            android:id="@+id/button0"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button8"
+            android:layout_below="@+id/button8"
+            android:layout_marginBottom="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "0")}'
+            android:text="@string/button_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button00"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button10" />
+
+        <Button
+            android:id="@+id/button00"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button8"
+            android:layout_below="@+id/button8"
+            android:layout_marginBottom="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, "00")}'
+            android:text="@string/button_00"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonEq"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button0" />
+
+        <Button
+            android:id="@+id/button10"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button7"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickSymbol(view, ".")}'
+            android:text="@string/button_dot"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/buttonEq"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/buttonDiv"
+            android:layout_alignStart="@+id/button10"
+            android:layout_below="@+id/button0"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:onClick='@{(view)->keyboardInteractor.onClickEqual(view)}'
+            android:text="@string/button_eq"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button00" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
