@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.karyc.calculator.databinding.ActivityMainBinding;
+
+import java.util.EmptyStackException;
 
 public class MainActivity extends AppCompatActivity {
     String expression = "";
@@ -31,11 +34,16 @@ public class MainActivity extends AppCompatActivity {
 
         public void onClickEqual(View view) {
             Log.d("v", "Eq" + expression);
-            double result = ExpressionSolver.calculate(expression);
+            double result = 0;
+            try {
+                result = ExpressionSolver.calculate(expression);
+            } catch (Exception e) {
+                Toast.makeText(MainActivity.this, R.string.error_message, Toast.LENGTH_LONG).show();
+            }
             Log.d("dsd", "=" + result);
             binding.textResult.setText(String.valueOf(result));
             binding.textExpression.setText(expression);
-            expression="";
+            expression = "";
 
         }
 

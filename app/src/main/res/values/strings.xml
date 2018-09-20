@@ -24,4 +24,6 @@
     <string name="parentheses_open">(</string>
     <string name="parentheses_close">)</string>
 
+    <string name="error_message">Ошибка! Проверьте правильность ввода данных.</string>
+
 </resources>
